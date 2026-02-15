@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For My Princess ❤️</title>
+
+<style>
+body{
+ margin:0;
+ font-family: 'Segoe UI', sans-serif;
+ background: linear-gradient(#ffd6e7,#fff);
+ text-align:center;
+ overflow-x:hidden;
+}
+
+/* floating hearts */
+.heart{
+ position:fixed;
+ bottom:-10px;
+ font-size:20px;
+ animation:floatUp 6s linear infinite;
+}
+@keyframes floatUp{
+ 0%{transform:translateY(0);opacity:1;}
+ 100%{transform:translateY(-100vh);opacity:0;}
+}
+
+/* letter */
+.letter{
+ width:300px;
+ height:200px;
+ margin:80px auto;
+ background:white;
+ border-radius:15px;
+ box-shadow:0 10px 30px rgba(0,0,0,.2);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ cursor:pointer;
+ transition:.6s;
+}
+.letter.open{
+ height:auto;
+ padding:30px;
+}
+
+.hidden{display:none;}
+
+button{
+ padding:14px 28px;
+ margin:15px;
+ border:none;
+ border-radius:30px;
+ font-size:18px;
+ cursor:pointer;
+}
+
+.yes{background:#ff4d88;color:white;}
+.no{background:#ddd;}
+
+img{
+ width:240px;
+ border-radius:20px;
+ margin-top:20px;
+ box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.timeline{
+ margin-top:40px;
+ text-align:left;
+ max-width:600px;
+ margin-inline:auto;
+}
+
+.count{
+ font-size:24px;
+ margin:20px;
+ font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<!-- floating hearts script -->
+<script>
+setInterval(()=>{
+ let heart=document.createElement("div");
+ heart.className="heart";
+ heart.innerHTML="❤️";
+ heart.style.left=Math.random()*100+"vw";
+ heart.style.fontSize=(20+Math.random()*20)+"px";
+ document.body.appendChild(heart);
+ setTimeout(()=>heart.remove(),6000);
+},500);
+</script>
+
+<h1>Happy Valentine’s Day My Love 💖</h1>
+
+<div class="letter" onclick="openLetter(this)">
+<h2>💌 Tap to open letter</h2>
+
+<div class="hidden" id="letterText">
+<p>
+My love,  
+You are the most beautiful chapter of my life.  
+Every second with you feels like destiny smiling at me.  
+No matter distance, time, or storms —  
+my heart will always find its way back to you. ❤️
+</p>
+
+<img src="YOURPHOTO.jpg">
+
+<h2>Will you be mine forever? 🥺</h2>
+
+<button class="yes" onclick="alert('YAYYY I LOVE YOU ❤️')">Yes 💖</button>
+<button class="no" id="noBtn">No 🙈</button>
+
+<div class="count" id="countdown"></div>
+
+<h3>Our Song 🎶</h3>
+<audio controls>
+<source src="YOURSNG.mp3">
+</audio>
+
+<div class="timeline">
+<h3>Our Love Story 📖</h3>
+<p>✨ The day we met — my favorite coincidence</p>
+<p>💞 The day we realized we matter to each other</p>
+<p>🌍 The distance that only made us stronger</p>
+<p>💍 The future waiting for us</p>
+</div>
+
+</div>
+</div>
+
+<script>
+function openLetter(el){
+ el.classList.add("open");
+ document.getElementById("letterText").classList.remove("hidden");
+}
+
+/* runaway no button */
+let no=document.getElementById("noBtn");
+no.addEventListener("mouseover",()=>{
+ no.style.position="absolute";
+ no.style.top=Math.random()*80+"vh";
+ no.style.left=Math.random()*80+"vw";
+});
+
+/* countdown */
+var date=new Date("APR 10, 2026 00:00:00").getTime();
+setInterval(()=>{
+ var now=new Date().getTime();
+ var d=date-now;
+ var days=Math.floor(d/(1000*60*60*24));
+ var h=Math.floor((d%(1000*60*60*24))/(1000*60*60));
+ var m=Math.floor((d%(1000*60*60))/(1000*60));
+ var s=Math.floor((d%(1000*60))/1000);
+ document.getElementById("countdown").innerHTML=
+ "Seeing you in "+days+"d "+h+"h "+m+"m "+s+"s ❤️";
+},1000);
+</script>
+
+</body>
+</html>
