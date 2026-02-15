@@ -5,78 +5,81 @@
 <title>For My Princess ❤️</title>
 
 <style>
+<style>
 body{
  margin:0;
- font-family: 'Segoe UI', sans-serif;
- background: linear-gradient(#ffd6e7,#fff);
+ font-family:'Segoe UI',sans-serif;
+ background:linear-gradient(#ffd6e7,#fff);
  text-align:center;
  overflow-x:hidden;
 }
 
-/* floating hearts */
-.heart{
- position:fixed;
- bottom:-10px;
- font-size:20px;
- animation:floatUp 6s linear infinite;
-}
-@keyframes floatUp{
- 0%{transform:translateY(0);opacity:1;}
- 100%{transform:translateY(-100vh);opacity:0;}
+h1{
+ font-size:clamp(28px,4vw,48px);
+ margin-top:40px;
 }
 
-/* letter */
 .letter{
- width:300px;
- height:200px;
- margin:80px auto;
+ width:min(90%,500px);
+ min-height:220px;
+ margin:60px auto;
  background:white;
- border-radius:15px;
- box-shadow:0 10px 30px rgba(0,0,0,.2);
- display:flex;
- align-items:center;
- justify-content:center;
+ border-radius:20px;
+ box-shadow:0 15px 40px rgba(0,0,0,.15);
+ padding:20px;
  cursor:pointer;
- transition:.6s;
-}
-.letter.open{
- height:auto;
- padding:30px;
+ transition:.5s;
 }
 
-.hidden{display:none;}
+.letter.open{
+ padding:35px;
+}
+
+p{
+ font-size:clamp(16px,2vw,20px);
+ line-height:1.6;
+}
+
+img{
+ width:70%;
+ max-width:260px;
+ border-radius:18px;
+ margin-top:20px;
+ box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
 
 button{
- padding:14px 28px;
+ padding:14px 26px;
  margin:15px;
  border:none;
  border-radius:30px;
  font-size:18px;
  cursor:pointer;
+ transition:.3s;
+}
+
+button:hover{
+ transform:scale(1.08);
 }
 
 .yes{background:#ff4d88;color:white;}
-.no{background:#ddd;}
-
-img{
- width:240px;
- border-radius:20px;
- margin-top:20px;
- box-shadow:0 10px 25px rgba(0,0,0,.2);
-}
+.no{background:#eee;}
 
 .timeline{
  margin-top:40px;
  text-align:left;
- max-width:600px;
+ max-width:500px;
  margin-inline:auto;
+ font-size:18px;
 }
 
 .count{
- font-size:24px;
- margin:20px;
+ font-size:22px;
+ margin:25px;
  font-weight:bold;
 }
+
+.hidden{display:none;}
 </style>
 </head>
 <body>
@@ -163,4 +166,5 @@ setInterval(()=>{
 
 </body>
 </html>
+
 
